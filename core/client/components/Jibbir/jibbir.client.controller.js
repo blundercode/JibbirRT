@@ -14,6 +14,7 @@ skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
   }
   addMessage(user + ' joined the room', 'action');
 });
+// lets leave a comment and see if that fixes it
 
 // skylink.on('peerUpdated', function(peerId, peerInfo, isSelf) {
 //   if(isSelf) {
