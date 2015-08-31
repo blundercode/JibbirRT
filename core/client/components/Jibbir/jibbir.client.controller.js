@@ -4,7 +4,7 @@
     angular.module('app')
         .controller('jibbirController', function ($scope) {
             $scope.test = "test";
-        });
+        
         var skylink = new Skylink();
 
 skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
@@ -72,4 +72,5 @@ skylink.init('3802100f-0384-4b1b-8a42-c49e38ab178f');
 //   div.textContent = message;
 //   chatbox.appendChild(div);
 // }
+        });
 } ());
