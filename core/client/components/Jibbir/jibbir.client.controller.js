@@ -15,12 +15,12 @@ skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
   addMessage(user + ' joined the room', 'action');
 });
 
-skylink.on('peerUpdated', function(peerId, peerInfo, isSelf) {
-  if(isSelf) {
-    user = peerInfo.userData.name || peerId;
-    addMessage('You\'re now known as ' + user, 'action');
-  }
-});
+// skylink.on('peerUpdated', function(peerId, peerInfo, isSelf) {
+//   if(isSelf) {
+//     user = peerInfo.userData.name || peerId;
+//     addMessage('You\'re now known as ' + user, 'action');
+//   }
+// });
 
 skylink.on('peerLeft', function(peerId, peerInfo, isSelf) {
   var user = 'You';
@@ -40,35 +40,35 @@ skylink.on('incomingMessage', function(message, peerId, peerInfo, isSelf) {
   addMessage(user + ': ' + message.content, className);
 });
 
-skylink.init('3802100f-0384-4b1b-8a42-c49e38ab178f'); // Get your own key at developer.temasys.com.sg
+// skylink.init('3802100f-0384-4b1b-8a42-c49e38ab178f'); 
 
-function setName() {
-  var input = document.getElementById('name');
-  skylink.setUserData({
-    name: input.value
-  });
-}
+// function setName() {
+//   var input = document.getElementById('name');
+//   skylink.setUserData({
+//     name: input.value
+//   });
+// }
 
-function joinRoom() {
-  skylink.joinRoom();
-}
+// function joinRoom() {
+//   skylink.joinRoom();
+// }
 
-function leaveRoom() {
-  skylink.leaveRoom();
-}
+// function leaveRoom() {
+//   skylink.leaveRoom();
+// }
 
-function sendMessage() {
-  var input = document.getElementById('message');
-  skylink.sendP2PMessage(input.value);
-  input.value = '';
-  input.select();
-}
+// function sendMessage() {
+//   var input = document.getElementById('message');
+//   skylink.sendP2PMessage(input.value);
+//   input.value = '';
+//   input.select();
+// }
 
-function addMessage(message, className) {
-  var chatbox = document.getElementById('chatbox'),
-    div = document.createElement('div');
-  div.className = className;
-  div.textContent = message;
-  chatbox.appendChild(div);
-}
+// function addMessage(message, className) {
+//   var chatbox = document.getElementById('chatbox'),
+//     div = document.createElement('div');
+//   div.className = className;
+//   div.textContent = message;
+//   chatbox.appendChild(div);
+// }
 } ());
