@@ -41,7 +41,7 @@ skylink.on('incomingMessage', function(message, peerId, peerInfo, isSelf) {
   addMessage(user + ': ' + message.content, className);
 });
 
-// skylink.init('3802100f-0384-4b1b-8a42-c49e38ab178f'); 
+skylink.init('3802100f-0384-4b1b-8a42-c49e38ab178f'); 
 
 // function setName() {
 //   var input = document.getElementById('name');
