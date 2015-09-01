@@ -13,8 +13,12 @@ skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
     user = peerInfo.userData.name || peerId;
   }
   addMessage(user + ' joined the room', 'action');
+  console.log(peerInfo);
 });
-// lets leave a comment and see if that fixes it
+
+
+
+
 
 // skylink.on('peerUpdated', function(peerId, peerInfo, isSelf) {
 //   if(isSelf) {
