@@ -5,47 +5,47 @@
         .controller('jibbirController', function ($scope) {
             $scope.test = "test";
         
-        var skylink = new Skylink();
+//         var skylink = new Skylink();
 
-skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
-  var user = 'You';
-  if(!isSelf) {
-    user = peerInfo.userData.name || peerId;
-  }
-  addMessage(user + ' joined the room', 'action');
-  console.log(peerInfo);
-});
-
-
-
-
-
-// skylink.on('peerUpdated', function(peerId, peerInfo, isSelf) {
-//   if(isSelf) {
+// skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
+//   var user = 'You';
+//   if(!isSelf) {
 //     user = peerInfo.userData.name || peerId;
-//     addMessage('You\'re now known as ' + user, 'action');
 //   }
+//   addMessage(user + ' joined the room', 'action');
+//   console.log(peerInfo);
 // });
 
-skylink.on('peerLeft', function(peerId, peerInfo, isSelf) {
-  var user = 'You';
-  if(!isSelf) {
-    user = peerInfo.userData.name || peerId;
-  }
-  addMessage(user + ' left the room', 'action');
-});
 
-skylink.on('incomingMessage', function(message, peerId, peerInfo, isSelf) {
-  var user = 'You',
-      className = 'you';
-  if(!isSelf) {
-    user = peerInfo.userData.name || peerId;
-    className = 'message';
-  }
-  addMessage(user + ': ' + message.content, className);
-});
 
-skylink.init('3802100f-0384-4b1b-8a42-c49e38ab178f'); 
+
+
+// // skylink.on('peerUpdated', function(peerId, peerInfo, isSelf) {
+// //   if(isSelf) {
+// //     user = peerInfo.userData.name || peerId;
+// //     addMessage('You\'re now known as ' + user, 'action');
+// //   }
+// // });
+
+// skylink.on('peerLeft', function(peerId, peerInfo, isSelf) {
+//   var user = 'You';
+//   if(!isSelf) {
+//     user = peerInfo.userData.name || peerId;
+//   }
+//   addMessage(user + ' left the room', 'action');
+// });
+
+// skylink.on('incomingMessage', function(message, peerId, peerInfo, isSelf) {
+//   var user = 'You',
+//       className = 'you';
+//   if(!isSelf) {
+//     user = peerInfo.userData.name || peerId;
+//     className = 'message';
+//   }
+//   addMessage(user + ': ' + message.content, className);
+// });
+
+// skylink.init('3802100f-0384-4b1b-8a42-c49e38ab178f'); 
 
 // function setName() {
 //   var input = document.getElementById('name');

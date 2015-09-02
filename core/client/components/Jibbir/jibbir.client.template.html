@@ -1,8 +1,11 @@
 <ul id="messages"></ul>
 <form action="">
-  <input id="m" autocomplete="off" />
-  <button>Send</button>
+
 </form>
+
+<div id="container">
+  <div id="chatbox"></div>
+</div>
 
 <header>
   <input type="text" id="name" placeholder="My name" autofocus />
@@ -14,9 +17,7 @@
   <button onclick="sendMessage()">Send message</button>
 </header>
 
-<div id="container">
-  <div id="chatbox"></div>
-</div>
+
 
 <script>
   var skylink = new Skylink();
@@ -71,11 +72,10 @@ function setName() {
 // }
 // console.log(logs());
 
-
-
-var joinRoom = (function() {
   var roomNum = Math.floor(Math.random() * 2) + 1;
   var room = roomNum.toString();
+
+var joinRoom = (function() {
   skylink.joinRoom(room);
   console.log(room);
 });
@@ -103,5 +103,56 @@ function addMessage(message, className) {
   div.textContent = message;
   chatbox.appendChild(div);
 }
+var currentRoom;
+var peerJoins = 0;
+      skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
+        var user = 'You';
+        peerJoins++;
+        if(!isSelf) {
+          user = peerInfo.userData.name || peerId;
+        }
+        if (peerJoins == 2) {
+          skylink.lockRoom();
+        }
+        addMessage(user + ' joined the room "' + currentRoom + '"', 'action');
+        console.log(peerInfo);
+      });
+
+      skylink.on('peerLeft', function(peerId, peerInfo, isSelf) {
+        peerJoins--;
+
+        if (peerJoins < 2) {
+          skylink.unlockRoom();
+        }
+        var user = 'You';
+        if(!isSelf) {
+          user = peerInfo.userData.name || peerId;
+        }
+        addMessage(user + ' left the "' + currentRoom + '"', 'action');
+      });
+
+      skylink.on('incomingMessage', function(message, peerId, peerInfo, isSelf) {
+        var user = 'You',
+            className = 'you';
+        if(!isSelf) {
+          user = peerInfo.userData.name || peerId;
+          className = 'message';
+        }
+        addMessage(user + ': ' + message.content, className);
+      });
+
+      skylink.init('d9f0f947-4279-425b-8de9-5092d2866a89', function (error, success) {
+        if (success) {
+          skylink.joinRoom(room, function (error, success) {
+            if (success) {
+              currentRoom = success.room;
+            } else {
+              console.error('Failed joining the room');
+            }
+          });
+        } else {
+          console.error('Failed initialising', error);
+        }
+      });
 
 </script>
