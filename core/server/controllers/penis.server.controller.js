@@ -14,5 +14,6 @@ exports.postPenis = function (req, res) {
 	penis.save(function (err) {
 		if (err) res.send(err);
 		else res.json(penis);
+		console.log(penis)
 	});
 };

@@ -5,13 +5,13 @@
         .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
             
             $mdThemingProvider.theme('default')
-                .primaryPalette('deep-orange', {
+                .primaryPalette('purple', {
                     'hue-1' : '300',
                     'hue-2' : '200',
                     'hue-3' : '50'
                 })
                 
-                .accentPalette('brown', {
+                .accentPalette('pink', {
                     'default': '400',
                     'hue-1'   : '300',
                     'hue-2'   : '200',
