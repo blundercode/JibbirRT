@@ -8,13 +8,13 @@
 </div>
 
 <header>
-  <input type="text" id="name" placeholder="My name" autofocus />
+  <input type="text" id="name" placeholder="My name" autofocus ng-model="chat.user" />
   <button onclick="setName()">Set my name</button>
   <button onclick="joinRoom()">Join room</button>
   <button onclick="leaveRoom()">Leave room</button>
   <br/>
-  <input type="text" id="message" placeholder="My message" />
-  <button onclick="sendMessage()">Send message</button>
+  <input type="text" id="message" placeholder="My message" ng-model="chat.aMessage" />
+  <button onclick="sendMessage()" ng-click="sendItOver()">Send message</button>
 </header>
 
 

@@ -29,3 +29,5 @@ node_modules
 
 # visual studio code typings
 typings
+
+bower_components

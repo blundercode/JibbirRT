@@ -2,7 +2,29 @@
     "use strict";
 
     angular.module('app')
-        .config(function ($stateProvider, $urlRouterProvider) {
+        .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
+            
+            $mdThemingProvider.theme('default')
+                .primaryPalette('deep-orange', {
+                    'hue-1' : '300',
+                    'hue-2' : '200',
+                    'hue-3' : '50'
+                })
+                
+                .accentPalette('brown', {
+                    'default': '400',
+                    'hue-1'   : '300',
+                    'hue-2'   : '200',
+                    'hue-3'   : '50'
+                });
+        
+                // .backgroundPalette('light-green', {
+                //     'default' : '50',
+                //     'hue-1'   : '300',
+                //     'hue-2'   : '200',
+                //     'hue-3'   : '50'
+                // })
+                
             $urlRouterProvider.otherwise('home');
 
             $stateProvider

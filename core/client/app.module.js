@@ -4,7 +4,9 @@
 
     angular.module('app', [
         'ui.router',
-        'ngSanitize'
+        'ngSanitize',
+        'ngMaterial',
+        'ngAnimate'
     ]);
 
 

@@ -3,9 +3,18 @@
 
     angular.module('app')
         .controller('jibbirController', function ($scope) {
-            $scope.test = "test";
+            // $scope.test = "test";
+            // var skylink = new Skylink();
+            
+            // $scope.setName = function() {
+            //     skylink.setUserData({
+            //         name: $scope.name
+            //     });
+            // };
         
-//         var skylink = new Skylink();
+      $scope.sendItOver = function(){
+          console.log($scope.chat)
+      }  
 
 // skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
 //   var user = 'You';

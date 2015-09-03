@@ -5,25 +5,29 @@
     <meta charset="UTF-8">
     <title>Jibbir: Real-Time Chat</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="components\bower_components\angular-material\angular-material.css" type="text/css">
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 
 <body ng-app="app">
-    <ul>
+    <!--<ul>
         <li>
             <a href="#/">Home</a>
         </li>
     </ul>
     <h1>Jibbir</h1>
-    <a href="/#/jibbir" class="btn btn-info">Jibbir</a>
-    <h3>App wired: {{ true }}</h3>
+    <md-button href="/#/jibbir" class="md-accent md-raised md-hue-2">Jibbir</md-button>
+    <h3>App wired: {{ true }}</h3>-->
     <div ui-view></div>
     <!-- Dependencies -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="\components\bower_components\angular\angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-sanitize.js"></script>
+    <script src="\components\bower_components\angular-animate\angular-animate.js"></script>
+    <script src="\components\bower_components\angular-aria\angular-aria.js"></script>
+    <script src="\components\bower_components\angular-material\angular-material.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
     <script src="//cdn.temasys.com.sg/skylink/skylinkjs/0.6.x/skylink.complete.min.js"></script>
