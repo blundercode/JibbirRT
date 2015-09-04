@@ -3,10 +3,17 @@
 
     angular.module('app')
         .controller('jibbirController', function ($scope, jibbirService) {
-
+            $scope.showName = true;
+            $scope.showMessage = false;
             $scope.sendItOver = function () {
                 jibbirService.saveChat($scope.chat);
                 console.log($scope.chat);
+            };
+            
+            $scope.setName = function(){
+                $scope.showName = false;
+                $scope.showMessage = true;
+                jibbirService.setUsername($scope.username);
             };
 
             // $scope.user = jibbirService.getUsername();

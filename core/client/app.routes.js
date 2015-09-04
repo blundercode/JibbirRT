@@ -5,7 +5,7 @@
         .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
             
             $mdThemingProvider.theme('default')
-                .primaryPalette('purple', {
+                .primaryPalette('pink', {
                     'hue-1' : '300',
                     'hue-2' : '200',
                     'hue-3' : '50'

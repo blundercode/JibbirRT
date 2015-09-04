@@ -8,13 +8,24 @@
 </div>
 
 <header>
-  <input type="text" id="name" placeholder="My name" autofocus />
-  <button onclick="setName()">Set my name</button>
-  <button onclick="joinRoom()">Join room</button>
-  <button onclick="leaveRoom()">Leave room</button>
+  <!--<input type="text" id="name" placeholder="My name" autofocus />-->
+  <md-input-container ng-show="showName">
+    <label>Enter Penis Name</label>
+    <input ng-model="username" type="text" id="name" placeholder="My name" autofocus>
+  </md-input-container>
+    <md-button class="md-primary md-raised" onclick="setName()" ng-click="setName()" ng-show="showName">Set my name</md-button> <br>
+    <md-input-container ng-show="showMessage">
+    <label>Ejaculate your message</label>
+    <textarea type="text" id="message" placeholder="My message" ng-model="chat.aMessage"></textarea>
+  </md-input-container>
+  <div ng-show="showMessage">
+    <md-button class="md-primary md-raised" onclick="sendMessage()" ng-click="sendItOver()">Send message</md-button>
+    <md-button class="md-primary md-raised" onclick="joinRoom()">Join room</md-button>
+    <md-button class="md-primary md-raised" onclick="leaveRoom()">Leave room</md-button>
+  </div>
   <br/>
-  <input type="text" id="message" placeholder="My message" ng-model="chat.aMessage" />
-  <button onclick="sendMessage()" ng-click="sendItOver()">Send message</button>
+  <!--<input type="text" id="message" placeholder="My message" ng-model="chat.aMessage" />-->
+  
 </header>
 
 
