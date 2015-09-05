@@ -10,13 +10,13 @@
 <header>
   <!--<input type="text" id="name" placeholder="My name" autofocus />-->
   <md-input-container ng-show="showName">
-    <label>Enter Penis Name</label>
+    <label>Enter Name</label>
     <input ng-model="username" type="text" id="name" placeholder="My name" autofocus>
   </md-input-container>
   <md-button class="md-primary md-raised" onclick="setName()" ng-click="setName()" ng-show="showName">Set my name</md-button>
   <br>
   <md-input-container ng-show="showMessage">
-    <label>Ejaculate your message</label>
+    <label>Your message</label>
     <textarea type="text" id="message" placeholder="My message" ng-model="chat.aMessage"></textarea>
   </md-input-container>
   <div ng-show="showMessage">

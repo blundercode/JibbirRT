@@ -11,7 +11,7 @@
                     'hue-3' : '50'
                 })
                 
-                .accentPalette('orange', {
+                .accentPalette('deep-orange', {
                     'default': '400',
                     'hue-1'   : '300',
                     'hue-2'   : '200',
