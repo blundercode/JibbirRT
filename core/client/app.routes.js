@@ -36,7 +36,7 @@
             $stateProvider
                 .state('jibbir', {
                     url: '/jibbir',
-                    templateUrl: 'components/jibbir/jibbir.client.template.html',
+                    templateUrl: 'components/Jibbir/jibbir.client.template.html',
                     controller: 'jibbirController'
                 });
         });
