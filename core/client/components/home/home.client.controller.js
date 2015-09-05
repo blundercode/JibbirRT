@@ -7,7 +7,7 @@
             
             $scope.setUsername = function(){
                 jibbirService.setUsername($scope.username);
-            }
+            };
             
             
         });

@@ -13,19 +13,20 @@
     <label>Enter Penis Name</label>
     <input ng-model="username" type="text" id="name" placeholder="My name" autofocus>
   </md-input-container>
-    <md-button class="md-primary md-raised" onclick="setName()" ng-click="setName()" ng-show="showName">Set my name</md-button> <br>
-    <md-input-container ng-show="showMessage">
+  <md-button class="md-primary md-raised" onclick="setName()" ng-click="setName()" ng-show="showName">Set my name</md-button>
+  <br>
+  <md-input-container ng-show="showMessage">
     <label>Ejaculate your message</label>
     <textarea type="text" id="message" placeholder="My message" ng-model="chat.aMessage"></textarea>
   </md-input-container>
   <div ng-show="showMessage">
     <md-button class="md-primary md-raised" onclick="sendMessage()" ng-click="sendItOver()">Send message</md-button>
-    <md-button class="md-primary md-raised" onclick="joinRoom()">Join room</md-button>
+    <md-button class="md-primary md-raised" onclick="getRoomNum(); joinRoom()">Join room</md-button>
     <md-button class="md-primary md-raised" onclick="leaveRoom()">Leave room</md-button>
   </div>
   <br/>
   <!--<input type="text" id="message" placeholder="My message" ng-model="chat.aMessage" />-->
-  
+
 </header>
 
 
@@ -68,7 +69,7 @@ skylink.on('peerUpdated', function(peerId, peerInfo, isSelf) {
 //   addMessage(user + ': ' + message.content, className);
 // });
 
-skylink.init('3802100f-0384-4b1b-8a42-c49e38ab178f'); // Get your own key at developer.temasys.com.sg
+// skylink.init('3802100f-0384-4b1b-8a42-c49e38ab178f'); // Get your own key at developer.temasys.com.sg
 
 function setName() {
   var input = document.getElementById('name');
@@ -82,14 +83,18 @@ function setName() {
 // SkylinkLogs.getLogs;
 // }
 // console.log(logs());
+var room = {};  
+ 
+function getRoomNum() {
+  var roomNum = Math.floor(Math.random() * 8) + 1;
+  room.number = roomNum.toString();
+}
 
-  var roomNum = Math.floor(Math.random() * 2) + 1;
-  var room = roomNum.toString();
-
-var joinRoom = (function() {
-  skylink.joinRoom(room);
-  console.log(room);
-});
+  
+function joinRoom() {
+  skylink.joinRoom(room.number);
+  console.log(room.number);
+}
 // console.log(skylink.joinRoom(room));
 
 
@@ -122,7 +127,7 @@ var peerJoins = 0;
         if(!isSelf) {
           user = peerInfo.userData.name || peerId;
         }
-        if (peerJoins == 2) {
+        if (peerJoins === 2) {
           skylink.lockRoom();
         }
         addMessage(user + ' joined the room "' + currentRoom + '"', 'action');
@@ -152,11 +157,11 @@ var peerJoins = 0;
         addMessage(user + ': ' + message.content, className);
       });
 
-      skylink.init('d9f0f947-4279-425b-8de9-5092d2866a89', function (error, success) {
+      skylink.init('9b4f238b-5cbf-4791-9831-94668a9d9dfc', function (error, success) {
         if (success) {
-          skylink.joinRoom(room, function (error, success) {
+          skylink.joinRoom(room.number, function (error, success) {
             if (success) {
-              currentRoom = success.room;
+              currentRoom = success.room.number;
             } else {
               console.error('Failed joining the room');
             }

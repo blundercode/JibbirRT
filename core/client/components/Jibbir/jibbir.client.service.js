@@ -14,7 +14,7 @@ angular.module("app")
 	};
 	this.setUsername = function(string){
 		username = string;
-	}
+	};
 	// this.getUsername = function(){
 	// 	return username
 	// }
