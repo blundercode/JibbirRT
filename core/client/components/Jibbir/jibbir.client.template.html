@@ -1,4 +1,4 @@
-<ul id="messages"></ul>
+<md-list id="messages"></md-list>
 <form action="">
 
 </form>
@@ -7,7 +7,7 @@
   <div id="chatbox"></div>
 </div>
 
-<header>
+<header >
   <!--<input type="text" id="name" placeholder="My name" autofocus />-->
   <md-input-container ng-show="showName">
     <label>Enter Name</label>
@@ -16,13 +16,13 @@
   <md-button class="md-primary md-raised" onclick="setName()" ng-click="setName()" ng-show="showName">Set my name</md-button>
   <br>
   <md-input-container ng-show="showMessage">
-    <label>Your message</label>
+    <label>Message</label>
     <textarea type="text" id="message" placeholder="My message" ng-model="chat.aMessage"></textarea>
   </md-input-container>
   <div ng-show="showMessage">
     <md-button class="md-primary md-raised" onclick="sendMessage()" ng-click="sendItOver()">Send message</md-button>
-    <md-button class="md-primary md-raised" onclick="getRoomNum(); joinRoom()">Join room</md-button>
     <md-button class="md-primary md-raised" onclick="leaveRoom()">Leave room</md-button>
+    <md-button class="md-primary md-raised" onclick="getRoomNum(); joinRoom()">Join New room</md-button>
   </div>
   <br/>
   <!--<input type="text" id="message" placeholder="My message" ng-model="chat.aMessage" />-->

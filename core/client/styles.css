@@ -22,7 +22,7 @@ header a:first-child {
 #container {
   position: relative;
   border: 1px #ddd solid;
-  height: 180px;
+  height: 800px;
   overflow-y: auto;
 }
 
@@ -39,7 +39,7 @@ header a:first-child {
 .you {
   font-weight: bold;
 }
-
+/*
 .ng-scope {
   height: 100% !important;
-}
+}*/
